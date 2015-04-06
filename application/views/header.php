@@ -11,4 +11,4 @@
     <link href="<?php echo base_url('assets/css/bootstrap.min.css') ?>" rel="stylesheet">
     <link href="<?php echo base_url('assets/css/font-awesome.min.css') ?>" rel="stylesheet">
 </head>
-<body>
+<body style="background-image: url('/images/cs_02.jpg');background-position-y:800px;">

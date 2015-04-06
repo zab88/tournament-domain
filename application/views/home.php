@@ -2,7 +2,7 @@
 $urls = json_decode($site['urls']);
 ?>
 <div class="container">
-    <h1><?php echo $site['name'] ?></h1>
+    <h1 style="color: rgba(245, 200, 8, 255);"><?php echo $site['name'] ?></h1>
 <!--    <div class="well">--><?php //echo $site['description'] ?><!--</div>-->
     <pre><?php echo $site['description'] ?></pre>
 <!--    --><?php //foreach ($urls as $url){
