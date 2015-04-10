@@ -1,7 +1,7 @@
 <?php
 $urls = json_decode($site['urls']);
 ?>
-<div class="container">
+<div class="container" style="max-width:800px">
     <h1 style="color: rgba(245, 200, 8, 255);"><?php echo $site['name'] ?></h1>
 <!--    <div class="well">--><?php //echo $site['description'] ?><!--</div>-->
     <pre><?php echo $site['description'] ?></pre>
