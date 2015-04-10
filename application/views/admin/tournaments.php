@@ -8,8 +8,16 @@
 
     <form class="form-horizontal" role="form" method="post" action="">
         <input type="hidden" value="<?php if ($trn) echo($trn['t_id']); ?>" name="tournament_id" />
+
         <div class="form-group">
-            <label for="trn_name" class="col-sm-4 control-label">Общее называние сайта</label>
+            <label for="trn_name" class="col-sm-4 control-label">Название вкладки</label>
+            <div class="col-sm-8">
+                <input type="text" class="form-control" id="trn_title" name="title" value="<?php echo $site['title']; ?>">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="trn_name" class="col-sm-4 control-label">Общее название сайта</label>
             <div class="col-sm-8">
                 <input type="text" class="form-control" id="trn_name" name="name" value="<?php echo $site['name']; ?>">
             </div>

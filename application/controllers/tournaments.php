@@ -27,6 +27,7 @@ class Tournaments extends CI_Controller {
         $site = $query->result_array();
         $site = $site[0];
 
+        $this->load->vars(array('site_title'=>$site['title']));
         $this->load->view('header');
         $this->load->view('home', array('site'=>$site));
         $this->load->view('footer');
