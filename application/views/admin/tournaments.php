@@ -1,5 +1,6 @@
 <?php
     $trn_stages = json_decode($site['urls']);
+    $is_arch = json_decode($site['is_arch']);
     $trn_stages_num = max( count($trn_stages), 1);
 ?>
 
@@ -34,15 +35,23 @@
             <?php for($i=0; $i<$trn_stages_num; $i++){ ?>
                 <div class="form-group js-stage">
                     <label class="col-sm-4 control-label">Ссылка на турнир <span><?php echo ($i+1); ?></span></label>
-                    <div class="col-sm-<?php echo ($i>0) ? '7' : '8'; ?>">
-                        <input type="text" class="form-control" name="trn_stages[]" value="<?php echo $trn_stages[$i] ?>">
+                    <div class="col-sm-<?php echo ($i>0) ? '6' : '8'; ?>">
+                        <input type="text" class="form-control" name="trn_stages[]" value="<?php echo $trn_stages[$i]    ?>">
                     </div>
                     <?php if ($i>0){ ?>
+                        <div class="col-sm-1">
+                            <select class="form-control" name="trn_archive[]">
+                                <option value="0"></option>
+                                <option value="1" <?php echo $is_arch[$i]?'selected="selected"':'' ?>>Архив</option>
+                            </select>
+                        </div>
                         <div class="col-sm-1">
                             <button type="button" class="btn btn-default js-stage-remove">
                                 <span class="glyphicon glyphicon-remove"></span>
                             </button>
                         </div>
+                    <?php }else{ ?>
+                        <input type="hidden" name="trn_archive[]" value="0" />
                     <?php } ?>
                 </div>
             <?php } ?>
@@ -51,8 +60,14 @@
         <div id="stages_tpl" style="display: none">
             <div class="form-group js-stage" >
                 <label class="col-sm-4 control-label">Ссылка на турнир <span></span></label>
-                <div class="col-sm-7">
+                <div class="col-sm-6">
                     <input type="text" class="form-control" id="trn_name" name="trn_stages[]" value="">
+                </div>
+                <div class="col-sm-1">
+                    <select class="form-control" name="trn_archive[]">
+                        <option value="0"></option>
+                        <option value="1">Архив</option>
+                    </select>
                 </div>
                 <div class="col-sm-1">
                     <button type="button" class="btn btn-default js-stage-remove">

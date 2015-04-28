@@ -49,13 +49,15 @@ class Adminka extends CI_Controller {
             $new_name = $this->input->post('name');
             $new_description = $this->input->post('desc');
             $new_sites = $this->input->post('trn_stages');
-//            var_dump($new_sites);die;
+            $new_arch = $this->input->post('trn_archive');
+//            var_dump($new_arch);die;
             if ($new_name && $new_description && $new_sites){
                 $this->db->update('sites', array(
                     'title' => $new_title,
                     'name' => $new_name,
                     'description' => $new_description,
-                    'urls' => json_encode( $new_sites )
+                    'urls' => json_encode( $new_sites ),
+                    'is_arch' => json_encode( $new_arch )
                 ));
             }
 
